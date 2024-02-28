@@ -34,8 +34,12 @@ import { Analytics } from './analytics/entities/analytics.entity';
         entities: [Album, Track, Artist, Analytics],
         autoLoadEntities: true,
         synchronize: true,
-      })
-    })
+        ssl: {
+          rejectUnauthorized: false,
+        },
+        options: { trustedServerCertificate: true },
+      }),
+    }),
   ],
   controllers: [AppController],
   providers: [AppService],
